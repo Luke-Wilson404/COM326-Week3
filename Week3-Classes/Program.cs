@@ -1,33 +1,48 @@
-﻿class Book
+﻿using System;
+
+namespace Program
 {
-    string Title;
-    string Author;
-    string ISBN;
-
-    static void Main( string[] args)
+    class Book
     {
-        //Create a new instance of the book class
-        Book book1 = new Book();
-        
-        book1.Title = "C# for Beginners";
-        book1.Author = "Bill Gates";
-        book1.ISBN = "123748920";
+        string Title;
+        string Author;
+        string ISBN;
+        int NoOfPages;
 
-        //Output the book information to the console
-        Console.WriteLine($"Book title: {book1.Title}");
-        Console.WriteLine($"Book author: {book1.Author}");
-        Console.WriteLine($"Book ISBN: {book1.ISBN}");
+        void DisplayInfo()
+        {
+            //Output the book information to the console
+            Console.WriteLine("Book Information: ");
+            Console.WriteLine("------------------");
+            Console.WriteLine($"Book title: {Title}");
+            Console.WriteLine($"Book author: {Author}");
+            Console.WriteLine($"Book ISBN: {ISBN}");
+            Console.WriteLine($"Book Pages: {NoOfPages}");
+            Console.WriteLine();
+        }
 
-        //Create a new instance of the book class
-        Book book2 = new Book();
+        static void Main(string[] args)
+        {
+            //Create a new instance of the book class
+            Book book1 = new Book();
 
-        book2.Title = "Ultimate C#";
-        book2.Author = "Microsoft";
-        book2.ISBN = "123748921";
+            book1.Title = "C# for Beginners";
+            book1.Author = "Bill Gates";
+            book1.ISBN = "123748920";
+            book1.NoOfPages = 200;
 
-        //Output the second book information to the console
-        Console.WriteLine($"Book title: {book2.Title}");
-        Console.WriteLine($"Book author: {book2.Author}");
-        Console.WriteLine($"Book ISBN: {book2.ISBN}");
+            //Create a new instance of the book class
+            Book book2 = new Book();
+
+            book2.Title = "Ultimate C#";
+            book2.Author = "Microsoft";
+            book2.ISBN = "123748921";
+            book2.NoOfPages = 50;
+
+            //Output book information to the console
+            book1.DisplayInfo();
+            book2.DisplayInfo();
+
+        }
     }
 }
